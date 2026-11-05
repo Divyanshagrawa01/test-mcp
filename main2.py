@@ -1,5 +1,6 @@
 from fastmcp import FastMCP
 import json
+import asyncio
 
 mcp = FastMCP("Remote MCP Server")
 
@@ -9,19 +10,19 @@ mcp = FastMCP("Remote MCP Server")
 # -------------------------
 
 @mcp.tool()
-def add(a: int, b: int) -> int:
+async def add(a: int, b: int) -> int:
     """Add two numbers."""
     return a + b
 
 
 @mcp.tool()
-def multiply(a: int, b: int) -> int:
+async def multiply(a: int, b: int) -> int:
     """Multiply two numbers."""
     return a * b
 
 
 @mcp.tool()
-def greet(name: str) -> str:
+async def greet(name: str) -> str:
     """Generate a greeting."""
     return f"Hello {name}! Welcome to Remote MCP."
 

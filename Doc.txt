@@ -53,3 +53,8 @@ Create main.py
 7.run server: uv run fastmcp run main.py
 8.Push file on github
 9.create account on fastmcpcloud and deploy there
+10.add mcp in claude
+
+
+
+3)MCP servers are async in nature so we need to convert all are function in async and await

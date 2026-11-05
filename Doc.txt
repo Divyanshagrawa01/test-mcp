@@ -1,0 +1,55 @@
+MCP is a standard way for AI models to connect with external tools, applications, and data.
+MCP allows AI applications to connect to different tools and services.
+
+In MCP we can make our tools as mcp servers , we write all the server in single json
+
+example:ChatGpt(client),Gmail(server)
+Suppose you have an AI assistant like ChatGPT.
+
+You ask:
+
+"Find all my unread emails and summarize them."
+
+Normally, an AI model cannot directly access your Gmail.
+
+But with MCP, you can connect the AI to Gmail.
+
+
+
+
+
+The problem with traditional tool integration is that 
+every AI application needs a different integration for different tools.
+
+MCP introduces a common communication standard.
+Instead of building a separate integration for every AI application and tool, 
+you build an MCP server for each tool.
+
+
+
+1)Building local mcp server:
+Basic setup -
+
+1.pip install uv
+2.create a folder in vs code
+3.execute command : uv init ., uv add "fastmcp==2.12.4" , .venv\Scripts\activate
+5.fastmcp version
+Create main.py
+
+6.now inside main.py writing code for baisc server and tools inside it
+7.test server: uv run fastmcp dev main.py
+8.run server: uv run fastmcp run main.py
+9.add server to claude desktop: uv run fastmcp install claude-desktop main.py
+
+
+2)Building remote mcp server:
+
+1.pip install uv
+2.create a folder in vs code
+3.execute command : uv init ., uv add "fastmcp==2.12.4" , .venv\Scripts\activate
+4.Create test.py
+
+6.now inside test.py writing code for remote server and tools inside it
+7.run server: uv run fastmcp run main.py
+8.Push file on github
+9.create account on fastmcpcloud and deploy there
